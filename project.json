@@ -1,0 +1,10 @@
+{
+    "name": "auto-gems-and-coins",
+    "main": "main.js",
+    "ignore": [
+        "build"
+    ],
+    "packageName": "com.tentoki.agc",
+    "versionName": "1.0.0",
+    "versionCode": 1
+}
