@@ -1,12 +1,13 @@
-function EarnButton(x, y, color, region) {
+function EarnButton(name, x, y, color, region) {
+    this.name = name;
     this.x = x;
     this.y = y;
     this.color = color;
     this.region = region;
 }
 
-var GEMS_BUTTON = new EarnButton(2302, 169, "#194a6f", [2187, 145, 235, 32]);
-var COINS_BUTTON = new EarnButton(2628, 169, "#efa91e", [2513, 169, 235, 32]);
+var GEMS_BUTTON = new EarnButton("gems", 2302, 169, "#194a6f", [2187, 145, 235, 32]);
+var COINS_BUTTON = new EarnButton("coins", 2628, 169, "#efa91e", [2513, 169, 235, 32]);
 
 auto();
 setScreenMetrics(device.width, device.height);
@@ -37,7 +38,7 @@ if (!images.requestScreenCapture(true)) {
 threads.shutDownAll();
 
 app.launchApp("Plants Vs Zombies 2");
-sleep(1000);    // Wait for the game to launch
+sleep(2000);    // Wait for the game to launch
 
 var notFoundTimes = 0;
 
@@ -80,11 +81,11 @@ toast("FINISH");
 
 // A series of automatic click actions to watch the ad
 function watchAdAuto(button) {
-    printFlt("Found.");
+    printFlt("Found " + button.name + ".");
     click(button.x, button.y);  // EARN
     sleep(100);
     click(1903, 860);   // YES
-    sleep(1800);
+    sleep(2000);
     click(228, 1329);   // mute
     sleep(30500);       // wait for the ad ends
     click(2964, 84);    // close ad
